@@ -14,8 +14,14 @@ Hackers exploit these exact muscle-memory patterns first. This app intercepts th
 2. Checks what you type against common keyboard shortcuts (like `123`, `qwerty`, or `pass`) and flags those predictable risks instantly.
 3. Uses Python's secure `secrets` library to completely eliminate human bias, spawning truly random, high-entropy machine passwords on demand.
 
-
+## Built With
+* Python 3
+* Streamlit Framework Engine
+* Core math & string libraries
+* Customized CSS DOM Injection
+  
 ## Setup & Launch
 ```bash
 pip install streamlit
 streamlit run app.py
+
