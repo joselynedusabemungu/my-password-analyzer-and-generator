@@ -138,6 +138,9 @@ def main():
             [data-testid="stTextInput"] input::placeholder {
                 color: rgba(255, 255, 255, 0.5) !important;
             }
+            [data-testid="InputInstructions"] {
+                display: none !important;
+            }
           
         </style>
     """, unsafe_allow_html=True)
@@ -158,8 +161,13 @@ def main():
     with column_left:
         st.markdown("**Live Password Analyzer**")
         st.caption("Type a password profile manually below to test keyboard shortcuts.")
-        user_input = st.text_input("Input Field Box", label_visibility="collapsed", placeholder="Type custom string...")
-        
+        user_input = st.text_input(
+            "Input Field Box", 
+            label_visibility="collapsed", 
+            placeholder="Type custom string and press 'Enter'...", 
+            type="password",
+            key="manual_password_input" 
+        )        
         if user_input:
             st.session_state.current_password = user_input
             st.session_state.source = "Manual Input"
